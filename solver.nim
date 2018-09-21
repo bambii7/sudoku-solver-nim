@@ -1,8 +1,8 @@
 import os
 
 proc solve(puzzle: string):string =
-
-  return puzzle
+  let i:int = puzzle.find('0')
+  return puzzle[i..i]
 
 if paramCount() == 1:
   let puzzle:string = paramStr(1)
