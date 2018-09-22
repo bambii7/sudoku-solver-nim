@@ -3,10 +3,12 @@ import os
 proc strReplaceChar(str: string, index: int, character: char): string =
   str[0..index - 1] & character & str[index + 1..str.high]
 
-proc solve(puzzle: string):string =
+proc solve(puzzle: string): string =
   let i:int = puzzle.find('0')
-  
-  let newPuzzle = strReplaceChar(puzzle, i, 'a')
+  if i == -1:
+    return puzzle
+
+  let newPuzzle: string = strReplaceChar(puzzle, i, 'a')
   return newPuzzle
 
 if paramCount() == 1:
