@@ -1,5 +1,5 @@
 import os
-import lib/sudoku
+import sudokusolver/math
 
 const sudoku_range: int8 = 81
 const sudoku_numbers: string = "123456789"
