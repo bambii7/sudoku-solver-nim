@@ -1,4 +1,4 @@
-import unittest
+import unittest, sudoku
 
 suite "description for this stuff":
   echo "suite setup: run once before the tests"
