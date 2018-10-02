@@ -1,13 +1,17 @@
-
+# Package
 packageName   = "sudokusolver"
-version       = "0.0.0"
-author        = "Alexis Hope"
+version       = "0.1.0"
+author        = "Alexis"
 description   = "Solvers for Sudoku"
+license       = "MIT"
+srcDir        = "src"
+bin           = @["sudokusolver"]
+
+# Dependencies
 
 requires "nim >= 0.18.0"
 
-srcDir = "src"
-bin    = @["sudokusolver"]
+# Tasks
 
 task test, "run standard tests":
   withDir "tests":
