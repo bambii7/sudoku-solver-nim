@@ -1,5 +1,5 @@
 import os
-import sudokusolver/math
+import lib/math
 
 const sudoku_range: int8 = 81
 const sudoku_numbers: string = "123456789"
@@ -23,8 +23,9 @@ proc solve(puzzle: string): string =
   let new_puzzle: string = strReplaceChar(puzzle, i, 'a')
   return new_puzzle
 
-if paramCount() == 1:
-  let puzzle:string = paramStr(1)
-  echo "solution: " & solve(puzzle)
-else:
-  echo "No puzzle found to solve"
+when isMainModule:
+  if paramCount() == 1:
+    let puzzle:string = paramStr(1)
+    echo "solution: " & solve(puzzle)
+  else:
+    echo "No puzzle found to solve"
