@@ -9,7 +9,7 @@ proc strReplaceChar(str: string, index: int, character: char): string =
 
 # proc filterExables
 
-proc solve(puzzle: string): string =
+proc solve*(puzzle: string): string =
   let i:int = puzzle.find('0')
   # if i == -1:
   #   return puzzle
