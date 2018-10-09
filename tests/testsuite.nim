@@ -1,4 +1,4 @@
-import unittest
+import unittest, sudokusolver, lib/math
 
 suite "description for this stuff":
   echo "suite setup: run once before the tests"
@@ -9,6 +9,11 @@ suite "description for this stuff":
   teardown:
     echo "run after each test"
   
+  test "sameColum returns true given 0, 9":
+    # give up and stop if this fails
+    let samesies = sameColum(0, 9)
+    check(samesies)
+
   test "essential truths":
     # give up and stop if this fails
     require(true)
