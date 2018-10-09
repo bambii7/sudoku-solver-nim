@@ -17,8 +17,7 @@ license       = "MIT"
 # Tasks
 
 task test, "run standard tests":
-  withDir "tests":
-    exec "nim c -r testsuite"
+  exec "nim c -r tests/testsuite"
 
 task build, "build":
   exec "nimble c src/sudokusolver"
