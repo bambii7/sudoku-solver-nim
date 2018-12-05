@@ -9,24 +9,12 @@ suite "description for this stuff":
   teardown:
     echo "run after each test"
   
-  test "sameColum returns true given 0, 9":
+  test "sameColum returns true given 2, 11":
     # give up and stop if this fails
-    let samesies = sameColum(0, 9)
-    check(samesies)
+    let samesies = sameColum(2, 11)
+    check(samesies == true)
 
-  test "essential truths":
+  test "sameColum returns false given 1, 81":
     # give up and stop if this fails
-    require(true)
-  
-  test "slightly less obvious stuff":
-    # print a nasty message and move on, skipping
-    # the remainder of this block
-    check(1 != 1)
-    check("asd"[2] == 'd')
-  
-  test "out of bounds error is thrown on bad access":
-    let v = @[1, 2, 3]  # you can do initialization here
-    expect(IndexError):
-      discard v[4]
-  
-  echo "suite teardown: run once after the tests"
+    let samesies = sameColum(1, 81)
+    check(samesies == false)
