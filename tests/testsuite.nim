@@ -24,3 +24,11 @@ suite "description for this stuff":
   test "sameRow returns false given 2, 12":
     let samesies = sameRow(2, 12)
     check(samesies == false)
+
+  test "sameBlock returns true given 1, 12":
+    let empty = sameRow(1, 12)
+    check(empty == false)
+
+  test "sameBlock returns true given 1, 18":
+    let empty = sameRow(1, 12)
+    check(empty == true)
