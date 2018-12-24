@@ -32,3 +32,7 @@ suite "description for this stuff":
   test "sameBlock returns true given 1, 18":
     let empty = sameRow(1, 12)
     check(empty == true)
+
+  test "solve returns nil if invalid input":
+    let result = solve("ABC")
+    check(result == nil)
