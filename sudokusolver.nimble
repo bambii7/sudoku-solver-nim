@@ -41,3 +41,6 @@ task build2, "build":
   build "sudokusolver"
   # switch("out", ("./build/sudokusolver"))
   # exec "nimble c sudokusolver/sudokusolver.nim"
+
+task solve, "solve a test puzzle":
+  exec "./build/sudokusolver 010020300004005060070000008006900070000100002030048000500006040000800106008000000"
