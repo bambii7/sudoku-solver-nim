@@ -1,5 +1,5 @@
 import os
-import lib/math
+import lib/math, lib/seqprocs
 import strutils
 import sequtils
 import intsets
@@ -10,22 +10,9 @@ const sudoku_numbers: array[9, int] = [1,2,3,4,5,6,7,8,9]
 # proc strReplaceChar(str: string, index: int, character: char): string =
 #   str[0..index - 1] & character & str[index + 1..str.high]
 
-proc replaceAt(s: seq[int], index: int, num: int): seq[int] =
-  let head = s[0..index - 1]
-  let replacement = @[num]
-  let tail = s[index + 1..s.high]
-  concat(head, replacement, tail)
 
-proc toString(s: seq[int]): string =
-  result = newStringOfCap(len(s))
-  for i in s:
-    add(result, i)
 
 proc solve*(puzzle: seq[int]): seq[int] =
-  # if puzzle.len != sudoku_range:
-  #   # throw exception if invalid input
-  #   return nil
-
   let search_index:int = puzzle.find(0)
   if search_index == -1:
     return puzzle
@@ -44,14 +31,15 @@ proc solve*(puzzle: seq[int]): seq[int] =
 
   return puzzle
 
+proc charToInt(c:char):int =
+  var str = newStringOfCap(1)
+  str.add(c)
+  return parseInt(str)
+
 when isMainModule:
   if paramCount() == 1:
     let puzzle:string = paramStr(1)
-    var puzzles:seq[int] = @[]
-    for c in puzzle:
-      var str = newStringOfCap(1)
-      str.add(c)
-      puzzles.add(parseInt(str))
+    let puzzles:seq[int] = map(puzzle, charToInt)
 
     echo "solving: " & toString(puzzles)
     let solution = solve(puzzles)
