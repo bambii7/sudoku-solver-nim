@@ -1,5 +1,5 @@
 import os
-import lib/seqprocs, lib/strprocs
+import lib/seqprocs, lib/charprocs
 import solver/backtrace
 import sequtils
 

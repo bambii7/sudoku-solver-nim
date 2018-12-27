@@ -1,5 +1,5 @@
 import intsets
-import ../lib/math, ../lib/seqprocs, ../lib/strprocs
+import ../lib/math, ../lib/seqprocs, ../lib/charprocs
 
 const sudoku_range: int = 81
 const sudoku_numbers: array[9, int] = [1,2,3,4,5,6,7,8,9]

@@ -1,5 +1,5 @@
 import unittest
-import lib/math, lib/strprocs
+import lib/math, lib/charprocs
 import solver/backtrace
 import sequtils
 
