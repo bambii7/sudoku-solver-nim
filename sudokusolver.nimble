@@ -44,3 +44,7 @@ task build2, "build":
 
 task solve, "solve a test puzzle":
   exec "./build/sudokusolver 010020300004005060070000008006900070000100002030048000500006040000800106008000000"
+
+task bs, "build and solve":
+  exec "nimble build2"
+  exec "nimble solve"
