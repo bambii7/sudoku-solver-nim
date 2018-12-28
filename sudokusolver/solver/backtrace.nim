@@ -5,6 +5,9 @@ const sudoku_range: int = 81
 const sudoku_numbers: array[9, int] = [1,2,3,4,5,6,7,8,9]
 
 proc backtrace*(puzzle: seq[int]): seq[int] =
+  if puzzle.len != 81:
+    return nil
+  
   let search_index:int = puzzle.find(0)
   if search_index == -1:
     return puzzle
