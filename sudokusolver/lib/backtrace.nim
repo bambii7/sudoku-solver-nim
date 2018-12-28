@@ -19,7 +19,7 @@ proc backtrace*(puzzle: seq[int]): seq[int] =
 
   for num in sudoku_numbers:
     if num notin exclude:
-      let new_puzzle = replaceAt(puzzle, search_index, num)
+      let new_puzzle = puzzle.replaceAt(search_index, num)
       let solution = backtrace(new_puzzle)
       if solution.find(0) == -1:
         return solution
