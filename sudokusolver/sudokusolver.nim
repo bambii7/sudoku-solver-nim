@@ -2,7 +2,6 @@ import os
 import lib/seqprocs, lib/charprocs
 import sequtils
 
-# include lib/charprocs
 include lib/backtrace
 
 when isMainModule:
