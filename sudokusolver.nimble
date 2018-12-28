@@ -34,8 +34,18 @@ proc build(name: string, lang: string = "c") =
   switch("out", ("./build/" & name))
   setCommand lang, "sudokusolver/" & name & ".nim"
 
+proc configForTests() =
+  --hints: off
+  --linedir: on
+  --stacktrace: on
+  --linetrace: on
+  --debuginfo
+  --path: "."
+  --run
+
 task test, "run standard tests":
-  test "testsuite"
+  configForTests()
+  test "all"
 
 task build2, "build":
   build "sudokusolver"
