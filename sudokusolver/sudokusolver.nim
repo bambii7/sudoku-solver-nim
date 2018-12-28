@@ -1,7 +1,9 @@
 import os
 import lib/seqprocs, lib/charprocs
-import solver/backtrace
 import sequtils
+
+# include lib/charprocs
+include lib/backtrace
 
 when isMainModule:
   if paramCount() == 1:
