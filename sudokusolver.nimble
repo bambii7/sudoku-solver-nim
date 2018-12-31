@@ -43,11 +43,16 @@ proc configForTests() =
   --path: "."
   --run
 
+proc configForBuild() =
+  --define: release
+  --path: "."
+
 task test, "run standard tests":
   configForTests()
   test "all"
 
 task build2, "build":
+  configForBuild()
   build "sudokusolver"
   # switch("out", ("./build/sudokusolver"))
   # exec "nimble c sudokusolver/sudokusolver.nim"
