@@ -9,6 +9,5 @@ when isMainModule:
     let puzzle:string = paramStr(1)
     let puzzles:seq[int] = puzzle.map(charToInt)
 
-    echo "solving: " & puzzles.toString()
     let solution = backtrace(puzzles)
-    echo "solution: " & solution.toString()
+    echo solution.toString()
